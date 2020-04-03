@@ -11,7 +11,15 @@ a.navbar-brand {
 a {
   color: #0366d6;
 }
+.buttonaslink {
+    background: none;
+    color: #0366d6;
+    border: none;
+}
 
+.buttonaslink:hover {
+    text-decoration: underline;
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
