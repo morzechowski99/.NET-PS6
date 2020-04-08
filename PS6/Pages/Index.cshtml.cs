@@ -25,24 +25,7 @@ namespace PS6.Pages
         public IActionResult OnGet()
         {
             return RedirectToPage("List");
-            string myCompanyDBcs = _configuration.GetConnectionString("myCompanyDB");
-            SqlConnection con = new SqlConnection(myCompanyDBcs);
-            string sql = "SELECT * FROM Product";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            con.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            StringBuilder htmlStr = new StringBuilder("");
-            while (reader.Read())
-            {
-                htmlStr.Append("<li>");
-                htmlStr.Append(reader["Id"].ToString() + " ");
-                htmlStr.Append(reader.GetString(1) + " ");
-                htmlStr.Append(String.Format("{0:0.00}",
-               Decimal.Parse(reader["Price"].ToString())));
-                htmlStr.Append("</li>");
-            }
-            reader.Close(); con.Close();
-            lblInfoText = htmlStr.ToString();
+           
 
         }
     }
